@@ -1,0 +1,30 @@
+integrator               = md
+dt                       = 0.003
+nsteps                   = 200000
+
+nstlog                   = 5000
+nstenergy                = 5000
+nstxout-compressed       = 5000
+
+continuation             = yes
+constraints              = all-bonds
+constraint-algorithm     = lincs
+
+cutoff-scheme            = Verlet
+
+coulombtype              = PME
+rcoulomb                 = 1.0
+
+vdwtype                  = Cut-off
+rvdw                     = 1.0
+DispCorr                 = EnerPres
+
+tcoupl                   = V-rescale
+tc-grps                  = Protein CAL LIG SOL  
+tau-t                    = 0.1  0.1  0.1  0.1
+ref-t                    = 300  300  300  300
+
+pcoupl                   = Parrinello-Rahman
+tau-p                    = 2.0
+compressibility          = 4.5e-5
+ref-p                    = 1.0

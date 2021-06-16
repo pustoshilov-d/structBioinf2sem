@@ -1,0 +1,50 @@
+;
+;	File 'topol.top' was generated
+;	By user: student6 (1007)
+;	On host: bio-tech
+;	At date: Wed Jun 16 19:00:49 2021
+;
+;	This is a standalone topology file
+;
+;	Created by:
+;	                    :-) GROMACS - gmx pdb2gmx, 2021.2 (-:
+;	
+;	Executable:   /home/student6/../..//usr/local/gromacs/bin//gmx
+;	Data prefix:  /home/student6/../..//usr/local/gromacs
+;	Working dir:  /home/student6/06.Struct_bioinf/hw4_2
+;	Command line:
+;	  gmx pdb2gmx -f protein.pdb -ff charmm27 -water tip3p -ignh -o conf.pdb -nochargegrp
+;	Force field was read from the standard GROMACS share directory.
+;
+
+; Include forcefield parameters
+#include "charmm27.ff/forcefield.itp"
+
+; Include chain topologies
+#include "ligand.itp"
+#include "topol_Protein_chain_A.itp"
+#include "topol_Ion_chain_A2.itp"
+
+; Include water topology
+#include "charmm27.ff/tip3p.itp"
+
+#ifdef POSRES_WATER
+; Position restraint for each water oxygen
+[ position_restraints ]
+;  i funct       fcx        fcy        fcz
+   1    1       1000       1000       1000
+#endif
+
+; Include topology for ions
+#include "charmm27.ff/ions.itp"
+
+[ system ]
+; Name
+TRYPSIN; in water
+
+[ molecules ]
+; Compound        #mols
+Protein_chain_A     1
+Ion_chain_A2        1
+ligand		        1
+SOL             17522

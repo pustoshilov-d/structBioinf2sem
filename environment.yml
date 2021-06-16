@@ -1,0 +1,25 @@
+name: struct_bioinf
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - biopython=1.78
+  - griddataformats=0.5.0
+  - ipykernel=5.5.0
+  - jupyterlab=3.0.9
+  - matplotlib=3.3.4
+  - mdanalysis=1.0.0
+  - nglview=2.7.7
+  - notebook=6.2.0
+  - numpy=1.20.1
+  - pandas=1.2.2
+  - pdb2pqr=3.1.0
+  - propka=3.4.0
+  - pypdb=2.0
+  - python=3.7
+  - scipy=1.6.0
+  - seaborn=0.11.1
+  - tqdm=4.57.0
+  - pip:
+    - freesasa==2.1.0
+
